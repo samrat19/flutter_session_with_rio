@@ -62,17 +62,49 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              TextField(
-                controller: numberOne,
-                keyboardType: TextInputType.number,
+              Padding(
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width/7,
+                  right: MediaQuery.of(context).size.width/3,
+                ),
+                child: TextField(
+                  controller: numberOne,
+                  decoration: InputDecoration(
+                    hintText: 'input the 1st Number',
+                    labelText: '1st Number',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(
+                        color: Colors.indigo,
+                        width: 4.0,
+                      ),
+                    ),
+                  ),
+                  keyboardType: TextInputType.number,
+                ),
               ),
-              TextField(
-                controller: numberTwo,
-                keyboardType: TextInputType.number,
-              ),
-              SizedBox(
-                height: 40.0,
+              Padding(
+                padding: EdgeInsets.only(
+                  left: MediaQuery.of(context).size.width/7,
+                  right: MediaQuery.of(context).size.width/3,
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'input the 2nd Number',
+                    labelText: '2nd Number',
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide(
+                        color: Colors.indigo,
+                        width: 4.0,
+                      ),
+                    ),
+                  ),
+                  controller: numberTwo,
+                  keyboardType: TextInputType.number,
+                ),
               ),
               Text(
                 result,
