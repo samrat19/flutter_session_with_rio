@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 main() => runApp(
@@ -31,17 +32,26 @@ class _MyAppState extends State<MyApp> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
-          child: GestureDetector(
-            onTap: nextPage,
-            child: Container(
-              height: 100.0,
-              width: 100.0,
-              child: Hero(
-                tag: 'android11',
-                child: Image.asset(
-                  'asset/android_logo.jpg',
-                  fit: BoxFit.cover,
+          child: Container(
+            height: 400.0,
+            width: 400.0,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                fit: BoxFit.cover,
+                colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.7),
+                  BlendMode.dstATop,
                 ),
+                image: AssetImage('asset/android_logo.jpg')
+              ),
+            ),
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(40.0),
+                child: Text('Today we learned about asset',style: TextStyle(
+                  color: Colors.amber,
+                  fontSize: 55.0,
+                ),),
               ),
             ),
           ),
