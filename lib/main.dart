@@ -52,7 +52,7 @@ class _NewsScreenState extends State<NewsScreen> {
         title: Text('Techy'),
         backgroundColor: Colors.redAccent,
       ),
-      body: isDataLoaded == true
+      body: isDataLoaded
           ? ListView.builder(
               physics: BouncingScrollPhysics(),
               itemCount: techNews.length == null ? 0 : techNews.length,
